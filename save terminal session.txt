@@ -1,0 +1,12 @@
+using windows powershell: 
+start-transcript -Path "C:\PATH\YOU\WANT\POWERSHELL_TRANSCRIPT.log"
+
+# The -NoClobber switch prevents overwriting an existing recording.
+
+stop-transcript
+-------------------------------------------
+history > FileName.log
+
+-------------------------------------------
+script file.log
+exit
