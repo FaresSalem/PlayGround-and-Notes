@@ -10,3 +10,15 @@ history > FileName.log
 -------------------------------------------
 script file.log
 exit
+
+PS1="> "
+
+Removing control chars (including console codes / colours) from script output
+using perl:
+
+clean.sh:
+cat $1 | perl -pe 's/\e([^\[\]]|\[.*?[a-zA-Z]|\].*?\a)//g' | col -b > $2
+
+run: bach ./clean.sh typescript FileName.log
+
+SOURCE: https://unix.stackexchange.com/q/14684/335543
